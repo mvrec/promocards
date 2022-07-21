@@ -59,9 +59,11 @@ gap: 20px;}
   align-items: center;
   color: #f7fbff;
   background: transparent;
+  transition: -webkit-transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 0ms;
 }
 .topbtn:hover{
   border: 1px solid rgb(108 121 251);
+  background: #232323;
 }
 .topbtn:active{
   border: 1px solid rgb(108 121 251);
@@ -421,8 +423,8 @@ gap: 20px;}
     bottom: 0;
     left: 0;
     width: calc(100% - 20px);
-    background: #6f76fd;
-    color: #fff;
+    background: #222;
+    color: #6f76fd;
     overflow: hidden;
     font-size: 12px;
     padding: 10px;
