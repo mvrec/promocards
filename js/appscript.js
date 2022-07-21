@@ -130,6 +130,14 @@ function finishEditing() {
   downloader.href = canvas.toDataURL("image/png")
 }
 
+function clearAll(){
+  ctx.clearRect(0, 0, canvas.width, canvas.height)
+  $("#form").fadeOut(1000);
+  $("#selectTrack").hide();
+  $("#info").fadeIn(2000);
+  $("#info").css("transform", `translateX(0)`);
+}
+
 let keyCheat = [];
 let darkText = "invert"
 let oldTime = Date.now();

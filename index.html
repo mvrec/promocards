@@ -63,9 +63,9 @@
         }
       </script>
 
-      <div id="head">
-        <span ><img src="./img/favicon-mvrec.png" style="width:100%;max-width: 30px"></span>
-        <button id="SelectBtn" class="topbtn">GET STARTED</button><small class="lgo">.Beta</small>
+      <div class="head">
+        <span ><img src="./img/favicon-mvrec.png" style="width:100%;max-width: 30px;vertical-align: middle;"></span><span>PROMO CARDS</span>
+        <small class="lgo">.Beta</small>
       </div>
     <section id="box">
       <section id="preview-area">
@@ -81,6 +81,7 @@
       <main id="sidebar">
         <div id="info">
           <h4 style="text-align: center">PROMO CARDS BY<br/><span class="lgo">Mix Vibe Records</span></h4>
+          <span class="head"><button id="SelectBtn" class="topbtn">GET STARTED</button><button id="SelectBtn" class="topbtn">For Profile</button></span>
           <p class="ntext">— Introducing Promo Cards, easily customizable graphics that you can create to share with your fans to promote yourself, your songs, your album from Mix Vibe Records.<br/>we want to help make your job(s) easier when it comes to creating eye-catching shareable social media assets to help you grow your audience and celebrate</p>
         </div>
         <div id="selectTrack" style="display: none">
@@ -148,7 +149,7 @@
           <button class="area" onclick="javascript: navigator.share({title: `Check Promo Cards By Mix Vibe Records`, url: ''})" title="Share Promo Cards By Mix Vibe Records">
             <i class="material-icons">share</i>
           </button>
-          <button class="area" onclick="ctx.clearRect(0, 0, canvas.width, canvas.height)" title="Clear and start over">
+          <button class="area" onclick="clearAll()" title="Clear and start over">
             <i class="material-icons">backspace</i>
           </button>
           <button class="area" onclick="darken(document.body.classList.contains('dark') ? 'light' : 'dark')" title="Toggle dark theme">

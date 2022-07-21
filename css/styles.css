@@ -41,10 +41,10 @@ p.ntext{
     height: 100%;
     margin: 0;
     padding: 0;}
-   #head{padding: 10px;
+   .head{padding: 10px;
   display: flex;
 justify-content: center;
-text-align: center;
+align-items: center;
 background: #2b2b2b;
 gap: 20px;}
 .topbtn {
@@ -456,7 +456,6 @@ select {
   outline: none;
   border-radius: 5px;
   cursor: pointer;
-  text-align: center;
 }
 .search-btn {background: none repeat scroll 0 0 #2bc5b4;border-radius: 4px;color: #FFFFFF;padding: 7px 20px;border: 0;cursor: pointer;  transition: 0.5s;}
   .search-btn:hover{background: #09c2d6;letter-spacing: 1px;transition: 0.5s;}
