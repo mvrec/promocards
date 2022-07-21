@@ -186,7 +186,6 @@ gap: 20px;}
 
 #info{
     display: grid;
-    gap: 20px;
     min-height: 380px;
     justify-items: center;
     align-items: center;
@@ -383,6 +382,9 @@ gap: 20px;}
     #selectTrack{
       height: -webkit-fill-available;
     }
+    #box {
+      height: 480px;
+    }
   }
   
   @media print,
@@ -419,8 +421,8 @@ gap: 20px;}
     bottom: 0;
     left: 0;
     width: calc(100% - 20px);
-    background: #222;
-    color: #6F75FD;
+    background: #6f76fd;
+    color: #fff;
     overflow: hidden;
     font-size: 12px;
     padding: 10px;
@@ -454,6 +456,7 @@ select {
   outline: none;
   border-radius: 5px;
   cursor: pointer;
+  text-align: center;
 }
 .search-btn {background: none repeat scroll 0 0 #2bc5b4;border-radius: 4px;color: #FFFFFF;padding: 7px 20px;border: 0;cursor: pointer;  transition: 0.5s;}
   .search-btn:hover{background: #09c2d6;letter-spacing: 1px;transition: 0.5s;}
