@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: https://ogp.me/ns#">
+
+<head>
+  <title>Promo Cards By Mix Vibe Records</title>
+
+  <link rel="stylesheet" type="text/css" href="./css/styles.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap' rel='stylesheet'/>
+  <script src="./js/jquery-3.4.1.min.js"></script>
+
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:site_name" content="Cub's Contraption">
+  <meta property="og:title" content="Cub's Contraption by Hermit Tools | Make thumbnails like cubfan135 in 3 steps">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://hermit-tools.github.io/Thumbnail-Maker/cubfan135">
+  <meta property="og:image" content="https://hermit-tools.github.io/Thumbnail-Maker/Resources/Icons/Cub's%20Head.png">
+  <meta name="description"
+    content="An automated and smart thumbnail maker for cubfan135's Hermitcraft videos. Create and download YouTube thumbnails like cubfan135 in just three steps with this PWA which can be installed and even runs offline. Crafted with love from Hermit Tools.">
+  <meta name="og:description"
+    content="An automated and smart thumbnail maker for cubfan135's Hermitcraft videos. Create and download YouTube thumbnails like cubfan135 in just three steps with this PWA which can be installed and even runs offline. Crafted with love from Hermit Tools.">
+  <meta name="theme-color" content="#037de1">
+</head>
+
+<body class="dark">
+    <script>
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          darken('dark', false);
+        }
+    
+        // Set Theme If Exists
+        if (localStorage.getItem("HTCC-theme")) {
+          if (localStorage.getItem("HTCC-theme") === "dark") {
+            darken();
+          } else {
+            darken('light');
+          }
+        } else {
+          // Set Theme To Current theme
+          document.classList.contains('dark') ? darken() : darken('light')
+        }
+    
+        function darken(state = "dark", setLocalStorage = true) {
+          if (state === 'dark') {
+            if (!document.body.classList.contains('dark')) {
+              document.body.classList.toggle('dark')
+            }
+          } else {
+            if (document.body.classList.contains('dark')) {
+              document.body.classList.toggle('dark')
+            }
+          }
+          // Check Theme and Save in Local Storage
+          if (setLocalStorage) {
+            if (document.body.classList.contains("dark")) {
+              localStorage.setItem("HTCC-theme", "dark")
+            } else {
+              localStorage.setItem("HTCC-theme", "light")
+            }
+          }
+        }
+      </script>
+
+      <div id="head">
+        <span ><img src="./img/favicon-mvrec.png" style="width:100%;max-width: 30px"></span>
+        <button id="SelectBtn" class="topbtn">GET STARTED</button><small class="lgo">.Beta</small>
+      </div>
+    <section id="box">
+      <section id="preview-area">
+        <div id="preview-text">
+          <img src="./img/mix-vibe-rec.png" style="max-width:200px"/>
+        </div>
+    
+        <canvas width="1920" height="1080" id="canvas" aria-label="A preview area of your thumbnail">
+          Your browser does not support the canvas element. Consider upgrading to a newer browser.
+        </canvas>
+      </section>
+    
+      <main id="sidebar">
+        <div id="info">
+          <h4 style="text-align: center">PROMO CARDS BY<br/><span class="lgo">Mix Vibe Records</span></h4>
+          <p class="ntext">— Introducing Promo Cards, easily customizable graphics that you can create to share with your fans to promote yourself, your songs, your album from Mix Vibe Records.<br/>we want to help make your job(s) easier when it comes to creating eye-catching shareable social media assets to help you grow your audience and celebrate</p>
+        </div>
+        <div id="selectTrack" style="display: none">
+          <form action="/search" onsubmit="return updateScript();">
+            <br/>
+            <span id="bgArea">
+          <label for="trackSelector" style="border: none;width: 100%;">
+            <input type="text" id="trackSelector" class="area" autocomplete="off" name="q" title="Search track name" placeholder="Search track name" aria-label="Search track name">
+          </label>
+          <button class="area" onclick="resultContainer.style.display='none';return false;" title="Remove background image">
+            <i class="material-icons">close</i>
+          </button>
+        </span>
+          <input class="search-btn" id="search-btn" onkeyup="resetField();" type="submit" value="Search" style="display:none"/>
+        </form>
+    
+          <div id="search-container" class="col-md-4 col-md-offset-4"></div>
+          <div id="search-loader">Loading...</div>
+        </div>
+        <div id="form" style="display: none">
+        <div class="formthumb"> 
+    <select id="bg-color" name="color">
+    <option>Choose a Background Color</option>
+    <option>Red</option>
+    <option>Pink</option>
+    <option>Purple</option>
+    <option>Deep Purple</option>
+    <option>Indigo</option>
+    <option>Blue</option>
+    <option>Light Blue</option>
+    <option>Cyan</option>
+    <option>Teal</option>
+    <option>Green</option>
+    <option>Light Green</option>
+    <option>Lime</option>
+    <option>Yellow</option>
+    <option>Amber</option>
+    <option>Orange</option>
+    <option>Deep Orange</option>
+    <option>Brown</option>
+    <option>Grey</option>
+    <option>Cyan</option>
+    </select>
+</div>
+    
+        <label for="tkTitleSelector" style="border: none;width: 100%;">
+          <input type="text" id="tkTitleSelector" class="area" autocomplete="off" oninput="process()" onclick="this.focus();this.select();" title="Enter Track Title" placeholder="Enter Track Title" aria-label="Enter Track Title">
+        </label>
+
+        <label for="tkArtistSelector" style="border: none;width: 100%;">
+          <input type="text" id="tkArtistSelector" class="area" autocomplete="off" oninput="process()" onclick="this.focus();this.select();" title="Enter Artist Name" placeholder="Enter Artist Name" aria-label="Enter Artist Name">
+        </label>
+    
+        <span class="area" id="show-hc-logo" style="cursor: auto;display: none">
+          <label for="hcLogoToggler" style="cursor: pointer;">Show label Logo:</label>
+          <input type="checkbox" checked="" id="hcLogoToggler" class="mdc-switch" onchange="process()">
+        </span>
+    
+        <a class="area" href="#" id="downloader" onclick="finishEditing()" style="text-decoration: none;">
+          <i class="material-icons">get_app</i>Download Thumbnail
+        </a>
+    
+        <span id="etc">
+          <button class="area" onclick="javascript: navigator.share({title: `Check Promo Cards By Mix Vibe Records`, url: ''})" title="Share Promo Cards By Mix Vibe Records">
+            <i class="material-icons">share</i>
+          </button>
+          <button class="area" onclick="ctx.clearRect(0, 0, canvas.width, canvas.height)" title="Clear and start over">
+            <i class="material-icons">backspace</i>
+          </button>
+          <button class="area" onclick="darken(document.body.classList.contains('dark') ? 'light' : 'dark')" title="Toggle dark theme">
+            <i class="material-icons">invert_colors</i>
+          </button>
+        </span>
+      </div>
+      
+      </main>
+    </section>
+      <script src="./js/mainscript.js"></script>
+      <script src="./js/appscript.js"></script>  
+    </body>
+
+</html>
