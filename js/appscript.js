@@ -7,6 +7,8 @@ var newColor;
 document.getElementById("bg-color").addEventListener("change", function () {
     var Nbackground = "#202020 #d32f2f #c2185b #7b1fa2 #512da8 #303f9f #1976d2 #0288d1 #0097a7 #00796b #388e3c #689f38 #afb42b #fbc02d #ffa000 #f57c00 #e64a19 #5d4037 #616161 #455a64 #1683ac".split(" ")[bgColor.selectedIndex];
     document.getElementById("canvas").style.backgroundColor = Nbackground;
+    document.getElementById("bg-color").style.backgroundColor = Nbackground;
+    document.getElementById("bg-color").style.color = "#fff";
     newColor = Nbackground;
     process();
 }); 
@@ -42,10 +44,10 @@ function addBgImage() {
     ctx.fillStyle = setNewcolor;
     ctx.fillRect(0, 0, 1920, 1080);
     ctx.save();
-    roundedImage(ctx, 170, 300, 550, 550, 20);
+    roundedImage(ctx, 140, 250, 600, 600, 20);
     ctx.clip();
    // bgImage.crossOrigin = "Anonymous";
-    ctx.drawImage(bgImage, 170, 300, 550, 550);  
+    ctx.drawImage(bgImage, 140, 250, 600, 600);  
     ctx.restore();
     
     hcLogo();
@@ -73,12 +75,12 @@ function TitleSelector() {
 
   ctx.fillStyle = "#fff";
   ctx.lineWidth = 12;
-  ctx.font = "40px sans-serif";
+  ctx.font = "44px sans-serif";
   ctx.textBaseline = "bottom";
 
   ctx.save();
   //ctx.scale(1.05, 0.98);
-  ctx.fillText(tkTtl, 750, 550);
+  ctx.fillText(tkTtl, 780, 550);
   ctx.fillRect(0, 475, 80, 12);
   ctx.restore();
  // ctx.fill();
@@ -88,10 +90,10 @@ function ArtistSelector() {
   let tkAts = tkArtistSelector.value;
   ctx.fillStyle = "#fff";
   ctx.lineWidth = 12;
-  ctx.font = "40px sans-serif";
+  ctx.font = "50px sans-serif";
   ctx.textBaseline = "bottom";
   ctx.save();
-  ctx.fillText(tkAts, 750, 620);
+  ctx.fillText(tkAts, 780, 620);
   ctx.restore();
 }
 
