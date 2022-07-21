@@ -45,7 +45,7 @@ function addBgImage() {
     ctx.fillRect(0, 0, 1920, 1080);
     ctx.save();
     ctx.beginPath()
-    ctx.arc(140, 250, 600, 0, Math.PI * 2, false)
+    ctx.arc(440, 550, 300, 0, Math.PI * 2, false)
     ctx.clip();
     ctx.drawImage(bgImage, 140, 250, 600, 600);  
     ctx.restore();
@@ -75,7 +75,7 @@ function TitleSelector() {
 
   ctx.fillStyle = "#fff";
   ctx.lineWidth = 12;
-  ctx.font = "44px sans-serif";
+  ctx.font = "50px sans-serif";
   ctx.textBaseline = "bottom";
 
   ctx.save();
@@ -90,7 +90,7 @@ function ArtistSelector() {
   let tkAts = tkArtistSelector.value;
   ctx.fillStyle = "#fff";
   ctx.lineWidth = 12;
-  ctx.font = "50px sans-serif";
+  ctx.font = "40px sans-serif";
   ctx.textBaseline = "bottom";
   ctx.save();
   ctx.fillText(tkAts, 780, 620);
