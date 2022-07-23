@@ -62,6 +62,7 @@ gap: 20px;}
   align-items: center;
   color: #f7fbff;
   background: transparent;
+  text-align: center;
   transition: -webkit-transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 0ms;
 }
 .topbtn:hover{
@@ -195,7 +196,7 @@ gap: 20px;}
     justify-items: center;
     align-items: center;
     align-content: center;
-    padding: 10px 10%;
+    padding: 10px 7%;
     box-sizing: border-box;
     overflow: hidden;
     background: #fff;
